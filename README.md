@@ -26,7 +26,9 @@ A new development team is tasked with creating a web based visualization tool. Y
 ### Running locally
 - fork or clone the repository
 - cd into `helloworld` dir
-- make sure your aws account is configured on your local machine. if not, run `aws configure`
+- if you don't already have an IAM role in AWS setup with CLI permission for serverless deployments, set that up now
+- for that role, create access keys
+- make sure your aws account is configured on your local machine. if not, run `aws configure`. you'll need the access keys to configure this.
 - run `serverless plugin install -n serverless-esbuild`
 - run `serverless deploy`
 - navigate to the `GET` endpoint
