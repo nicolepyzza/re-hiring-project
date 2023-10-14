@@ -21,7 +21,7 @@ A new development team is tasked with creating a web based visualization tool. Y
 * Commit often and don't squash commits
 * Don’t spend more than a few hours on the challenge. If some requirements could not be completed, let us know why.
 
-## Prereqs
+## Instructions for Deployment
 
 ### Running locally
 - cd into `helloworld` dir
