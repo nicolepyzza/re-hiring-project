@@ -23,7 +23,7 @@ jobs:
     - name: serverless deploy
       uses: serverless/github-action@v3.2
       with:
-        args: -c "serverless plugin install -n serverless-esbuild && cd helloworld && serverless deploy"
+        args: -c "serverless plugin install -n serverless-esbuild && cd ./helloworld && serverless deploy"
         entrypoint: /bin/sh
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
