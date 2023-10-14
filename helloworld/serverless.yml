@@ -1,0 +1,18 @@
+service: helloworld
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  function1:
+    handler: index.handler
+    url: true
+    events:
+      - httpApi:
+          path: /hello-world
+          method: get
+
+plugins:
+  - serverless-esbuild
