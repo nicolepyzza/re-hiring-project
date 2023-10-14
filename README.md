@@ -31,7 +31,10 @@ A new development team is tasked with creating a web based visualization tool. Y
 - make sure your aws account is configured on your local machine. if not, run `aws configure`. you'll need the access keys to configure this.
 - run `serverless plugin install -n serverless-esbuild`
 - run `serverless deploy`
-- navigate to the `GET` endpoint
+- navigate to the `GET` endpoint displayed in the terminal
+- 
+#### TO DESTROY:
+- run `sls remove`
 
 ### Running with GitHub Actions
 - fork or clone repository into your own repo
@@ -42,6 +45,14 @@ A new development team is tasked with creating a web based visualization tool. Y
 - push the latest code up and follow Actions as it deploys the serverless files into your AWS account
 - navigate to `AWS Console > Lambda > helloworld-dev-function1`. Click on the url and see the `Hello World` webpage.
 
+#### TO DESTROY:
+- navigate to deploy.yml under `.github\workflows\`
+- uncomment `sls remove` step
+
 ### What am I deploying?
 - an AWS lambda, written in Node.js that returns a simple HTML `Hello World!`
 - API gateway to assist w/ event-driven lambda navigation
+
+### How to deploy to different environments
+- OPTION 1: configure AWS_ACCESS_KEY_ID AND AWS_SECRET_ACCESS_KEY secrets for each environment, and tailor the deploy.yml file to the environment
+- OPTION 2: add a `config/` directory and add the environment-specific yaml configurations in each file (i.e. `config.dev.yml` or `config.prod.yml`)
