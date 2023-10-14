@@ -29,3 +29,16 @@ A new development team is tasked with creating a web based visualization tool. Y
 - run `serverless plugin install -n serverless-esbuild`
 - run `serverless deploy`
 - navigate to the `GET` endpoint
+
+### Running with GitHub Actions
+- fork or clone repository into your own repo
+- if you don't already have an IAM role in AWS setup with CLI permission for serverless deployments, set that up now
+- for that role, create access keys
+- in the repo settings, create (2) secrets: AWS_ACCESS_KEY_ID AND AWS_SECRET_ACCESS_KEY with the values from the access key you created in AWS in the step above
+- in the `.github\workflows\deploy.yml` file, if applicable, change the `on\push` branch(es) to whatever your branch name is for testing
+- push the latest code up and follow Actions as it deploys the serverless files into your AWS account
+- navigate to `AWS Console > Lambda > helloworld-dev-function1`. Click on the url and see the `Hello World` webpage.
+
+### What am I deploying?
+- an AWS lambda, written in Node.js that returns a simple HTML `Hello World!`
+- API gateway to assist w/ event-driven lambda navigation
