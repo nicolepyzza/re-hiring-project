@@ -24,6 +24,7 @@ A new development team is tasked with creating a web based visualization tool. Y
 ## Instructions for Deployment
 
 ### Running locally
+- fork or clone the repository
 - cd into `helloworld` dir
 - make sure your aws account is configured on your local machine. if not, run `aws configure`
 - run `serverless plugin install -n serverless-esbuild`
